@@ -1,0 +1,14 @@
+## create a project
+podman run \
+-v /home/jkaganow/apps/autoblog:/usr/src/app \
+-w /usr/src/app \
+--name next.bld node:latest \
+npx create-next-app -e with-tailwindcss .
+
+## start development server
+podman run \
+-v /home/jkaganow/apps/autoblog:/usr/src/app \
+-w /usr/src/app \
+-p 3001:3000 \
+--name next.dev node:latest \
+npm run dev
